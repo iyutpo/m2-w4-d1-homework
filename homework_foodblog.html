@@ -87,57 +87,52 @@
     <aside id="leftside"></aside>
     <aside id="rightside"></aside>
     <div id="container">
-    <header><span>Food Blog</span></header>
+        <!-- <header><span>Food Blog</span></header> -->
+        <blogoob></blogoob>
 
-    <main>
-    
-    <aside id="photos">
-        <img src="images/chili.jpg" alt="White Chicken Chili" width="180">
-    </aside>
-    <h2>Comments</h2>
-    
-    
-    <section id="blogposts">
-    
-    <div class="post">
-        <span class="author">Brianna</span> — 
-        <span class="date">February 18, 2021 @ 3:30 pm</span>
-        <span class="reply">REPLY</span>
-        <p>
-        Was amazing! My Walmart didn’t have coriander in stock and didn’t have ground cumin. I used serrano instead of jalapeño. It was just like my favorite tortilla soup from BJs. I am sending this recipe to my family. I want everyone to try it!
-        </p>
-    </div>
+        <main>
+        
+            <aside id="photos">
+                <img src="images/chili.jpg" alt="White Chicken Chili" width="180">
+            </aside>
+            
+            <!-- <h2>Comments</h2> -->
+            <commentsoob></commentsoob>
+            
+            <section id="blogposts">
 
-    <div class="post">
-        <span class="author">LINH</span> — 
-        <span class="date">February 15, 2021 @ 9:46 am</span>
-        <span class="reply">REPLY</span>
-        <p>
-        I just made this soup today and it’s so tasty! didn’t have corn at home but still turned out very good.  It’s a winner!  I made beef chili for my parents; but since my dad has gout he can’t eat beef; this white chicken chili is perfect for him.  Thank you Lisa!
-        </p>
-    </div>
+            
+                <div class="post">
+                    <span class="author">{{ author1 }}</span> — 
+                    <span class="date"> {{ date1 }} </span>
+                    <span class="reply">REPLY</span>
+                    <p>{{ message1 }} </p>
+                </div>
 
-    <div class="post">
-        <span class="author">CATHERINE LEONARDO</span> — 
-        <span class="date">February 13, 2021 @ 12:58 pm</span>
-        <span class="reply">REPLY</span>
-        <p>
-        I LOVE this White Chicken Chili! You are right, it is satiating meal—delicious with toasted bread. Refreshingly different taste than any chicken chili I’ve made in the past. I made it exactly as written and added some chopped zucchini, carrots, and celery. Instead of shredding the chicken, I chopped it into small pieces. It freezes very well. Will be an all-time favorite, for sure.
-        </p>
-    </div>
+                <div class="post">
+                    <span class="author">{{ author2 }}</span> — 
+                    <span class="date"> {{ date2 }}</span>
+                    <span class="reply">REPLY</span>
+                    <p> {{ message2 }} </p>
+                </div>
 
-    <div class="post">
-        <span class="author">KALI</span> — 
-        <span class="date">February 13, 2021 @ 11:31 am</span>
-        <span class="reply">REPLY</span>
-        <p>
-        This recipe is dynamite! My partner usually won’t eat beans but he finished the whole pot (darn was hoping to have some for leftovers haha). This is crowd-pleaser that I am going to add to my regular recipe rotation. Thanks so much, Lisa!
-        </p>
-    </div>  
+                <div class="post">
+                    <span class="author">{{ author3 }}</span> — 
+                    <span class="date">{{ date3 }}</span>
+                    <span class="reply">REPLY</span>
+                    <p> {{ message3 }} </p>
+                </div>
 
-    </section>
+                <div class="post">
+                    <span class="author">{{ author4 }}</span> — 
+                    <span class="date">{{ date4 }}</span>
+                    <span class="reply">REPLY</span>
+                    <p> {{ message4 }} </p>
+                </div>  
 
-    </main>
+            </section>
+
+        </main>
 
     <footer>
         &copy; Copyright FOOD BLOG
@@ -146,7 +141,36 @@
 </div>
 
 <script>
-    
+    var blog = {
+        template: '<header><span>Food Blog</span></header>'
+    }
+
+    var comments = {
+        template: '<h2>Comments</h2>'
+    }
+
+    var app1 = new Vue({
+        el: '#container',
+        data: {
+            author1:'Brianna',
+            date1:'February 18, 2021 @ 3:30 pm',
+            message1: 'Was amazing! My Walmart didn’t have coriander in stock and didn’t have ground cumin. I used serrano instead of jalapeño. It was just like my favorite tortilla soup from BJs. I am sending this recipe to my family. I want everyone to try it!',
+            author2:'LINH',
+            date2:'February 15, 2021 @ 9:46 am',
+            message2: "I just made this soup today and it’s so tasty! didn’t have corn at home but still turned out very good.  It’s a winner!  I made beef chili for my parents; but since my dad has gout he can’t eat beef; this white chicken chili is perfect for him.  Thank you Lisa!",
+            author3:'CATHERINE LEONARDO',
+            date3:'February 13, 2021 @ 12:58 pm',
+            message3: "I LOVE this White Chicken Chili! You are right, it is satiating meal—delicious with toasted bread. Refreshingly different taste than any chicken chili I’ve made in the past. I made it exactly as written and added some chopped zucchini, carrots, and celery. Instead of shredding the chicken, I chopped it into small pieces. It freezes very well. Will be an all-time favorite, for sure.",
+            author4:'KALI',
+            date4:'February 13, 2021 @ 11:31 am',
+            message4: "This recipe is dynamite! My partner usually won’t eat beans but he finished the whole pot (darn was hoping to have some for leftovers haha). This is crowd-pleaser that I am going to add to my regular recipe rotation. Thanks so much, Lisa!",
+        },
+        components: {
+            'blogoob': blog,
+            'commentsoob': comments,
+        },
+    });
+
 </script>
 
 </body>
